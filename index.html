@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Healthcare</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery.easy_number_animate.min.js"></script>
     <script src="assets/js/script.js"></script>
 </head>
 <body>
@@ -38,25 +39,25 @@
             <div class="healthcare__facts--items">
                 <div class="healthcare__facts--item">
                     <div class="healthcare__facts--item-title">Факт 1</div>
-                    <div class="healthcare__facts--item-number">2022</div>
+                    <div class="healthcare__facts--item-number js-number" data-number="2022">0</div>
                     <div class="healthcare__facts--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Iste necessitatibus odio officia quia ratione similique sit.</div>
                 </div>
                 <div class="healthcare__facts--item">
                     <div class="healthcare__facts--item-title">Факт 2</div>
-                    <div class="healthcare__facts--item-number">100+</div>
+                    <div class="healthcare__facts--item-number js-number" data-number="100" data-after="+">0</div>
                     <div class="healthcare__facts--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Iste necessitatibus odio officia quia ratione similique sit.</div>
                 </div>
                 <div class="healthcare__facts--item">
                     <div class="healthcare__facts--item-title">Факт 3</div>
-                    <div class="healthcare__facts--item-number">30 000</div>
+                    <div class="healthcare__facts--item-number js-number" data-number="30000">0</div>
                     <div class="healthcare__facts--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Iste necessitatibus odio officia quia ratione similique sit.</div>
                 </div>
                 <div class="healthcare__facts--item">
                     <div class="healthcare__facts--item-title">Факт 4</div>
-                    <div class="healthcare__facts--item-number">>20</div>
+                    <div class="healthcare__facts--item-number js-number" data-number="20" data-before=">">0</div>
                     <div class="healthcare__facts--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Iste necessitatibus odio officia quia ratione similique sit.</div>
                 </div>
@@ -82,7 +83,9 @@
                 <div class="healthcare__cards--bottom-image" style="background-image: url('assets/img/arrow.svg')"></div>
             </div>
         </div>
-        <div class="healthcare__slider"></div>
+        <div class="healthcare__slider">
+
+        </div>
         <div class="healthcare__links container">
             <div class="healthcare__links--title">Полезные ссылки</div>
             <div class="healthcare__links--items">

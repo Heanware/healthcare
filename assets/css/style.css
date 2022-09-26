@@ -29,14 +29,15 @@
 /* HEALTHCARE HEADER */
 
 .healthcare__header {
-    display: flex;
+    display: grid;
+    grid-template-rows: 880px;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .healthcare__header--description {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex: 1 0 50%;
     padding: 0 0 0 60px;
 }
 
@@ -50,7 +51,6 @@
 }
 
 .healthcare__header--image {
-    flex: 1 0 50%;
     min-height: 880px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -73,7 +73,7 @@
 }
 
 .healthcare__about--right-text {
-    max-width: 525px;
+    max-width: 490px;
     align-self: center;
 }
 
