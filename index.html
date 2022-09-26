@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Healthcare</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/script.js"></script>
 </head>
 <body>
     <div class="healthcare">
@@ -24,7 +26,13 @@
                     деятельности.</div>
             </div>
         </div>
-        <div class="healthcare__video"></div>
+        <div class="healthcare__video container">
+            <div class="healthcare__video--wrapper js-wider">
+                <video loop autoplay muted>
+                    <source src="assets/video/tmn.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
         <div class="healthcare__statistics"></div>
         <div class="healthcare__cards"></div>
         <div class="healthcare__slider"></div>
