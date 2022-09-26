@@ -10,6 +10,7 @@
     box-sizing: border-box;
     color: #232323;
     font-family: "Manrope", sans-serif;
+    font-style: normal;
 }
 
 .container {
@@ -100,7 +101,7 @@
 
 .healthcare__facts {
     padding-top: 145px;
-    padding-bottom: 145px;
+    padding-bottom: 65px;
 }
 
 .healthcare__facts--items {
@@ -110,7 +111,7 @@
 
 .healthcare__facts--item {
     flex: 1 0 50%;
-    min-height: 385px;
+    padding-bottom: 80px;
 }
 
 .healthcare__facts--item-title {
@@ -119,6 +120,7 @@
 
 .healthcare__facts--item-number {
     font-size: 130px;
+    padding-bottom: 30px;
 }
 
 .healthcare__facts--item-description {
