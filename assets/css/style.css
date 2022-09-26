@@ -8,6 +8,7 @@
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
+    color: #232323;
     font-family: "Manrope", sans-serif;
 }
 
@@ -16,8 +17,9 @@
 }
 
 .healthcare__header--description-text,
-.healthcare__about--right-text {
-    text-indent: 30px;
+.healthcare__about--right-text,
+.healthcare__facts--item-description {
+    text-indent: 40px;
 }
 
 
@@ -72,6 +74,10 @@
 
 /* VIDEO */
 
+.healthcare__video {
+    padding-bottom: 70px;
+}
+
 .healthcare__video--wrapper {
     position: relative;
     padding-top: 56.25%;
@@ -88,4 +94,34 @@
     max-width: calc(100vw - 120px);
     transform: translate(-50%, 0);
     transition: max-width 1s;
+}
+
+/* HEALTHCARE FACTS */
+
+.healthcare__facts {
+    padding-top: 145px;
+    padding-bottom: 145px;
+}
+
+.healthcare__facts--items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.healthcare__facts--item {
+    flex: 1 0 50%;
+    min-height: 385px;
+}
+
+.healthcare__facts--item-title {
+    font-size: 12px;
+}
+
+.healthcare__facts--item-number {
+    font-size: 130px;
+}
+
+.healthcare__facts--item-description {
+    max-width: 500px;
+    font-size: 24px;
 }

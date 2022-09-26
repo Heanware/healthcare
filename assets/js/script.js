@@ -17,7 +17,7 @@ $(function () {
             if (scroll > offset - videoBeforeAnimation) {
                 $video.css("max-width", width + "px");
             } else {
-                $video.css("max-width", "calc(100vw - 60px)");
+                $video.css("max-width", "calc(100vw - 120px)");
             }
         });
     });
