@@ -10,48 +10,73 @@ class Slider {
     $images;
     $descriptions;
     $activeImage;
-
+    $slideNumber;
+    isChangingSlide = false;
 
     constructor($images, $descriptions, $controls) {
         this.$images = $images.find(".healthcare__slider--image");
         this.$descriptions = $descriptions.find(".healthcare__slider--info-description");
-        let $first = this.$images.first();
-        $first.addClass("image-active");
         this.$descriptions.first().addClass("description-active");
-        this.$activeImage = $first;
-        let thisSlider = this;
-        $controls.find(".healthcare__slider--info-controls-prev").on("click", function () {
-            thisSlider.prev();
-        });
-        $controls.find(".healthcare__slider--info-controls-next").on("click", function () {
-            thisSlider.next();
+        this.$activeImage = this.$images.first();
+        this.$activeImage.addClass("image-active");
+
+        let thisSlider = this,
+            $arrowPrev = $controls.find(".healthcare__slider--info-controls-prev"),
+            $arrowNext = $controls.find(".healthcare__slider--info-controls-next");
+
+        this.$slideNumber = $controls.find(".healthcare__slider--info-controls-count");
+        this.$slideNumber.text((this.$activeImage.index()+1).toString().padStart(2, "0")  + "|" + this.$images.length);
+
+        $arrowPrev.on("click", function () {
+            if (!thisSlider.isChangingSlide) {
+                thisSlider.blockControls();
+                thisSlider.prev();
+                thisSlider.afterChange("image-active-right");
+            }
         });
 
+        $arrowNext.on("click", function () {
+            if (!thisSlider.isChangingSlide) {
+                thisSlider.blockControls();
+                thisSlider.next();
+                thisSlider.afterChange("image-active");
+            }
+        });
+    }
+
+    afterChange($class) {
+        this.$images.removeClass("image-active image-active-right");
+        this.$activeImage.addClass($class);
+        this.$descriptions.removeClass("description-active");
+        this.$descriptions.eq(this.$activeImage.index()).addClass("description-active");
+        this.$slideNumber.text((this.$activeImage.index()+1).toString().padStart(2, "0")  + "|" + this.$images.length);
     }
 
     next() {
-        this.$images.removeClass("image-active");
-        if (this.$activeImage.next().length > 0) {
-            this.$activeImage = this.$activeImage.next();
+        let $next = this.$activeImage.next();
+        if ($next.length > 0) {
+            this.$activeImage = $next;
         } else {
             this.$activeImage = this.$images.first();
         }
-        this.$activeImage.addClass("image-active");
-        this.$descriptions.removeClass("description-active");
-        this.$descriptions.eq(this.$activeImage.index()).addClass("description-active");
     }
 
     prev() {
-        if (this.$activeImage.prev().length > 0) {
-            this.$activeImage = this.$activeImage.prev();
+        let $prev = this.$activeImage.prev();
+        if ($prev.length > 0) {
+            this.$activeImage = $prev;
         } else {
             this.$activeImage = this.$images.last();
         }
-        this.$activeImage.addClass("image-active");
-        this.$descriptions.removeClass("description-active");
-        this.$descriptions.eq(this.$activeImage.index()).addClass("description-active");
     }
 
+    blockControls() {
+        let thisSlider = this;
+        thisSlider.isChangingSlide = true;
+        setTimeout(function () {
+            thisSlider.isChangingSlide = false;
+        }, 1000);
+    }
 }
 
 

@@ -207,13 +207,13 @@
 
 .healthcare__slider--image {
     position: absolute;
+    max-width: 0%;
     width: 100%;
     height: 100%;
-    opacity: 0;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: opacity 0.5s;
+    transition: max-width 1s 1s cubic-bezier(0.96, 0.07, 0.29, 0.96);
 }
 
 .healthcare__slider--info {
@@ -235,33 +235,29 @@
 }
 
 .healthcare__slider--image.image-active {
-    opacity: 1;
+    max-width: 100%;
+    z-index: 3;
+    transition: max-width 1s;
+}
+
+.healthcare__slider--image.image-active-right {
+    max-width: 100%;
+    z-index: 3;
+    transition: max-width 1s;
+    right: 0;
 }
 
 .healthcare__slider--info-description {
     position: absolute;
     overflow-wrap: anywhere;
-}
-
-.healthcare__slider--info-description.description-active >
-.healthcare__slider--info-description-title,
-.healthcare__slider--info-description.description-active >
-.healthcare__slider--info-description-text {
-    display: block;
-    opacity: 1;
-}
-
-.healthcare__slider--info-description.description-active >
-.healthcare__slider--info-description-button {
-    opacity: 1;
-}
-
-.healthcare__slider--info-description-title,
-.healthcare__slider--info-description-text {
     opacity: 0;
     transition: opacity 0.5s;
 }
 
+.healthcare__slider--info-description.description-active {
+    display: block;
+    opacity: 1;
+}
 
 .healthcare__slider--info-description-title {
     font-size: 35px;
@@ -277,8 +273,6 @@
     display: inline-block;
     border: 1px solid #232323;
     border-radius: 80px;
-    opacity: 0;
-    transition: 0S;
 }
 
 .healthcare__slider--info-controls {
@@ -297,6 +291,10 @@
     background-position: center;
 }
 
+.healthcare__slider--info-controls-count {
+    flex: 2 0;
+    text-align: center;
+}
 
 /* LINKS */
 
