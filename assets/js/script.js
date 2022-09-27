@@ -24,8 +24,8 @@ class Slider {
             $arrowPrev = $controls.find(".healthcare__slider--info-controls-prev"),
             $arrowNext = $controls.find(".healthcare__slider--info-controls-next");
 
-        this.$slideNumber = $controls.find(".healthcare__slider--info-controls-count");
-        this.$slideNumber.text((this.$activeImage.index()+1).toString().padStart(2, "0")  + "|" + this.$images.length);
+        this.$slideNumber = $controls.find(".js-slides-counter");
+        this.$slideNumber.text((this.$activeImage.index() + 1).toString().padStart(2, "0"));
 
         $arrowPrev.on("click", function () {
             if (!thisSlider.isChangingSlide) {
@@ -49,7 +49,7 @@ class Slider {
         this.$activeImage.addClass($class);
         this.$descriptions.removeClass("description-active");
         this.$descriptions.eq(this.$activeImage.index()).addClass("description-active");
-        this.$slideNumber.text((this.$activeImage.index()+1).toString().padStart(2, "0")  + "|" + this.$images.length);
+        this.$slideNumber.text((this.$activeImage.index() + 1).toString().padStart(2, "0"));
     }
 
     next() {
@@ -138,5 +138,4 @@ $(function () {
             });
         });
     }
-})
-;
+});
