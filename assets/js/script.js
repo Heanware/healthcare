@@ -1,16 +1,76 @@
 const videoBeforeAnimation = 300,
+    numbersBeforeAnimation = 500,
     $window = $(window);
 
 let windowWidth = $window.outerWidth(),
     numbersAnimated = false;
 
+class Slider {
+
+    $images;
+    $descriptions;
+    $activeImage;
+
+
+    constructor($images, $descriptions, $controls) {
+        this.$images = $images.find(".healthcare__slider--image");
+        this.$descriptions = $descriptions.find(".healthcare__slider--info-description");
+        let $first = this.$images.first();
+        $first.addClass("image-active");
+        this.$descriptions.first().addClass("description-active");
+        this.$activeImage = $first;
+        let thisSlider = this;
+        $controls.find(".healthcare__slider--info-controls-prev").on("click", function () {
+            thisSlider.prev();
+        });
+        $controls.find(".healthcare__slider--info-controls-next").on("click", function () {
+            thisSlider.next();
+        });
+
+    }
+
+    next() {
+        this.$images.removeClass("image-active");
+        if (this.$activeImage.next().length > 0) {
+            this.$activeImage = this.$activeImage.next();
+        } else {
+            this.$activeImage = this.$images.first();
+        }
+        this.$activeImage.addClass("image-active");
+        this.$descriptions.removeClass("description-active");
+        this.$descriptions.eq(this.$activeImage.index()).addClass("description-active");
+    }
+
+    prev() {
+        if (this.$activeImage.prev().length > 0) {
+            this.$activeImage = this.$activeImage.prev();
+        } else {
+            this.$activeImage = this.$images.last();
+        }
+        this.$activeImage.addClass("image-active");
+        this.$descriptions.removeClass("description-active");
+        this.$descriptions.eq(this.$activeImage.index()).addClass("description-active");
+    }
+
+}
+
+
 $(function () {
     let $videoWrappers = $(".js-wider"),
         scrollBarWidth = window.innerWidth - $window.width(),
         $numbers = $(".js-number"),
-        $factsBottomBorder = $(".healthcare__facts").offset().top - 500;
+        $factsAnimationBreakpoint = $(".healthcare__facts").offset().top - numbersBeforeAnimation,
+        $sliders = $(".js-slider");
 
-    console.log($factsBottomBorder);
+    $sliders.each(function () {
+        $this = $(this);
+        new Slider(
+            $this.find(".healthcare__slider--images"),
+            $this.find(".healthcare__slider--info-descriptions"),
+            $this.find(".healthcare__slider--info-controls")
+        );
+    })
+
 
     $window.on("scroll", function () {
         let scroll = $(this).scrollTop();
@@ -26,7 +86,8 @@ $(function () {
                 $video.css("max-width", "calc(100vw - 120px)");
             }
         });
-        if (scroll >= $factsBottomBorder && !numbersAnimated) {
+
+        if (scroll >= $factsAnimationBreakpoint && !numbersAnimated) {
             animateNumbers();
         }
     });
