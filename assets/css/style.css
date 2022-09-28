@@ -129,6 +129,7 @@
 .healthcare__facts--items {
     display: flex;
     flex-wrap: wrap;
+
 }
 
 .healthcare__facts--item {

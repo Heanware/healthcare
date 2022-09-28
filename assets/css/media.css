@@ -490,6 +490,10 @@
         max-width: calc(100vw - 30px);
     }
 
+    .healthcare__facts--item {
+        flex: 1 0 100%;
+    }
+
     .healthcare__cards {
         grid-template-rows: 280px repeat(2, 284px);
         grid-template-columns: 1fr;
