@@ -20,6 +20,10 @@
         padding-bottom: 46px;
     }
 
+    .healthcare__video--wrapper video {
+        max-width: calc(100vw - 80px);
+    }
+
     /* FACTS */
     .healthcare__facts {
         padding-top: 75px;
@@ -121,6 +125,10 @@
         padding-bottom: 36px;
     }
 
+    .healthcare__video--wrapper video {
+        max-width: calc(100vw - 64px);
+    }
+
     .healthcare__facts {
         padding-top: 140px;
         padding-bottom: 80px;
@@ -177,6 +185,11 @@
         padding-bottom: 60px;
     }
 
+    .healthcare__slider--info-description-button > a {
+        padding: 17px 47px;
+        font-size: 12px;
+    }
+
     .healthcare__links {
         padding-top: 175px;
         padding-bottom: 175px;
@@ -212,7 +225,7 @@
     }
 
     .healthcare__header {
-        grid-template-rows: 354px 570px;
+        grid-template-rows: 380px 570px;
     }
 
     .healthcare__header--description {
@@ -239,6 +252,10 @@
 
     .healthcare__video {
         padding-bottom: 26px;
+    }
+
+    .healthcare__video--wrapper video {
+        max-width: calc(100vw - 48px);
     }
 
     .healthcare__facts {
@@ -313,7 +330,144 @@
         width: 122px;
         height: 122px;
     }
-    .healthcare__links--item-info-text{
+
+    .healthcare__links--item-info-text {
         font-size: 18px;
+    }
+}
+
+@media (max-width: 568px) {
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .healthcare__header--description-text,
+    .healthcare__about--right-text,
+    .healthcare__facts--item-description,
+    .healthcare__cards--top-description,
+    .healthcare__cards--bottom-description,
+    .healthcare__slider--info-description-text {
+        text-indent: unset;
+    }
+
+    .healthcare__header {
+        grid-template-rows: 250px 320px;
+    }
+
+    .healthcare__header--description {
+        padding: 0 0 50px 15px;
+    }
+
+    .healthcare__header--description-title {
+        font-size: 26px;
+        padding-bottom: 20px;
+    }
+
+    .healthcare__header--description-text {
+        font-size: 12px;
+    }
+
+    .healthcare__about {
+        padding-top: 80px;
+        padding-bottom: 30px;
+    }
+
+    .healthcare__about--right-text {
+        max-width: 255px;
+    }
+
+    .healthcare__video {
+        padding-bottom: 16px;
+    }
+
+    .healthcare__facts {
+        padding-top: 80px;
+        padding-bottom: 20px;
+    }
+
+    .healthcare__facts--item-description {
+        font-size: 14px;
+        max-width: 250px;
+    }
+
+    .healthcare__cards {
+        grid-template-rows: 150px 320px;
+    }
+
+    .healthcare__cards--description {
+        padding: 0 15px 60px 15px;
+    }
+
+    .healthcare__cards--description-text {
+        font-size: 22px;
+        max-width: 400px;
+    }
+
+    .healthcare__cards--top,
+    .healthcare__cards--bottom {
+        padding: 60px 17px 43px 17px;
+    }
+
+    .healthcare__cards--top-title,
+    .healthcare__cards--bottom-title {
+        padding-bottom: 20px;
+    }
+
+    .healthcare__cards--top-image,
+    .healthcare__cards--bottom-image {
+        min-height: 20px;
+        max-width: 20px;
+    }
+
+    .healthcare__slider--images {
+        min-height: 320px;
+    }
+
+    .healthcare__slider--info {
+        padding: 20px 15px 40px 15px;
+        min-height: 310px;
+    }
+
+    .healthcare__slider--info-title {
+        padding-bottom: 40px;
+    }
+
+    .healthcare__slider--info-descriptions {
+        max-width: 398px;
+        padding-bottom: 65px;
+    }
+
+    .healthcare__slider--info-description-title {
+        padding-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .healthcare__slider--info-description-text {
+        padding-bottom: 45px;
+        font-size: 12px;
+    }
+
+    .healthcare__links {
+        padding-top: 40px;
+        padding-bottom: 50px;
+    }
+
+    .healthcare__links--item {
+        padding: 35px 23px 24px 23px;
+        min-height: 355px;
+        max-width: 255px;
+        margin-bottom: 30px;
+    }
+
+    .healthcare__links--item-info-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    .healthcare__links--item-info-text {
+        font-size: 14px;
+        padding-top: 20px;
     }
 }

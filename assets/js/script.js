@@ -108,7 +108,7 @@ $(function () {
             if (scroll > offset - videoBeforeAnimation) {
                 $video.css("max-width", width + "px");
             } else {
-                $video.css("max-width", "calc(100vw - 120px)");
+                $video.css("max-width", "");
             }
         });
 
