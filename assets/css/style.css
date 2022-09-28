@@ -3,6 +3,17 @@
     src: url("../fonts/Manrope-Regular.ttf");
 }
 
+@keyframes show {
+    0% {
+        display: block;
+        opacity: 0;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -53,7 +64,6 @@
 }
 
 .healthcare__header--image {
-    max-height: 880px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
@@ -199,6 +209,8 @@
 
 /* SLIDER */
 
+/* ДОБАВИТЬ ВРАППЕР ДЛЯ ИНФЫ О СЛАЙДЕ ЧТОБЫ ПОЛОЖЕНИЕ КНОПОК ЗАВИСЕЛО ОТ РАЗМЕРА ТЕКСТА */
+
 .healthcare__slider {
     display: flex;
 }
@@ -235,7 +247,7 @@
 .healthcare__slider--info-descriptions {
     position: relative;
     max-width: 530px;
-    flex: 1 0;
+    padding-bottom: 80px;
 }
 
 .healthcare__slider--image.image-active {
@@ -252,10 +264,14 @@
 }
 
 .healthcare__slider--info-description {
-    position: absolute;
     overflow-wrap: anywhere;
-    opacity: 0;
     transition: opacity 0.5s;
+    display: none;
+    opacity: 0;
+    animation-name: show;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
 }
 
 .healthcare__slider--info-description.description-active {
