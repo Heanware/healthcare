@@ -425,6 +425,11 @@
         min-height: 320px;
     }
 
+    .healthcare__slider--image {
+        flex-direction: column;
+        justify-content: unset;
+    }
+
     .healthcare__slider--info {
         padding: 20px 15px 40px 15px;
         min-height: 310px;
