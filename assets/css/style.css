@@ -14,16 +14,17 @@
 }
 
 .container {
-    padding: 0 60px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 .healthcare__header--description-text,
 .healthcare__about--right-text,
-.healthcare__facts--item-description,
 .healthcare__cards--top-description,
 .healthcare__cards--bottom-description,
 .healthcare__slider--info-description-text {
-    text-indent: 40px;
+    font-size: 18px;
+    text-indent: 35px;
 }
 
 
@@ -48,11 +49,11 @@
 }
 
 .healthcare__header--description-text {
-    max-width: 565px;
+    max-width: 510px;
 }
 
 .healthcare__header--image {
-    min-height: 880px;
+    max-height: 880px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
@@ -62,7 +63,8 @@
 
 .healthcare__about {
     display: flex;
-    min-height: 380px;
+    padding-top: 200px;
+    padding-bottom: 80px;
 }
 
 .healthcare__about > div {
@@ -131,6 +133,7 @@
 .healthcare__facts--item-description {
     max-width: 500px;
     font-size: 24px;
+    text-indent: 30px;
 }
 
 /* CARDS */
