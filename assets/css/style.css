@@ -229,6 +229,7 @@
 
 .healthcare__slider--info-title {
     padding-bottom: 180px;
+    color: #919191;
 }
 
 .healthcare__slider--info-descriptions {
@@ -303,13 +304,14 @@
 
 .healthcare__links {
     padding-top: 150px;
-    padding-bottom: 230px;
+    padding-bottom: 190px;
 }
 
 .healthcare__links--title {
     display: block;
     font-size: 18px;
     padding-bottom: 60px;
+    color: #919191;
 }
 
 .healthcare__links--items {
@@ -341,6 +343,8 @@
     width: 122px;
     height: 122px;
     align-self: center;
+    background-size: contain;
+    background-position: center;
 }
 
 .healthcare__links--item-info-text {
