@@ -90,7 +90,6 @@ class AnimatedNumber {
             animatedNumber = this;
         this.$number = $number;
         $window.on("scroll", function () {
-            console.log(numbersBeforeAnimation);
             if ($(this).scrollTop() > offset - numbersBeforeAnimation && !animatedNumber.isAnimated) {
                 animatedNumber.animate();
             }

@@ -19,6 +19,43 @@
     }
 }
 
+@keyframes fromLeft {
+    0% {
+        transform: translateX(-100%);
+        justify-content: center;
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes imgFromLeft {
+    0% {
+        object-position: 0;
+    }
+    100% {
+        object-position: 100%;
+    }
+}
+
+@keyframes toRight {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes imgToRight {
+    0% {
+        object-position: 100%;
+    }
+    100% {
+        object-position: 200%;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -218,8 +255,6 @@
 
 /* SLIDER */
 
-/* ДОБАВИТЬ ВРАППЕР ДЛЯ ИНФЫ О СЛАЙДЕ ЧТОБЫ ПОЛОЖЕНИЕ КНОПОК ЗАВИСЕЛО ОТ РАЗМЕРА ТЕКСТА */
-
 .healthcare__slider {
     display: flex;
 }
@@ -227,25 +262,23 @@
 .healthcare__slider--images {
     position: relative;
     flex: 1 0 50%;
+    overflow: hidden;
 }
 
 .healthcare__slider--image {
     position: absolute;
     width: 100%;
+    z-index: -1;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     overflow: hidden;
-    transform: translate(-100%);
-    transition: transform 0.5s 1s;
 }
 
 .healthcare__slider--image > img {
-    transform: translate(-100%);
-    transition: transform 0.5s 1s;
-    object-fit: cover;
     height: 100%;
+    object-fit: cover;
+    object-position: 100%;
 }
 
 .healthcare__slider--info {
@@ -268,25 +301,31 @@
     padding-bottom: 80px;
 }
 
-.healthcare__slider--image.image-active {
+.healthcare__slider--image.image-active,
+.healthcare__slider--image.image-active-right,
+.healthcare__slider--image.image-active > img,
+.healthcare__slider--image.image-active-right > img {
     z-index: 3;
-    transform: unset;
-    transition: 1s;
-    transition-timing-function: cubic-bezier(0.64, 0.14, 0.28, 0.99);
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-timing-function: cubic-bezier(0.49, 0, 0.29, 1.0);
 }
 
-.healthcare__slider--image.image-active > img {
-    z-index: 3;
-    transform: unset;
-    transition: 1s;
-    transition-timing-function: cubic-bezier(0.64, 0.05, 0.37, 0.79);
+.healthcare__slider--image.image-active {
+    animation-name: fromLeft;
 }
 
 .healthcare__slider--image.image-active-right {
-    max-width: 100%;
-    z-index: 3;
-    transition: max-width 1s;
-    right: 0;
+    animation-name: toRight;
+}
+
+.healthcare__slider--image.image-active > img {
+    animation-name: imgFromLeft;
+}
+
+.healthcare__slider--image.image-active-right > img {
+    animation-name: imgToRight;
 }
 
 .healthcare__slider--info-description {
