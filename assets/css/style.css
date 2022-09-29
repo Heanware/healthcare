@@ -34,7 +34,7 @@
         object-position: 0;
     }
     100% {
-        object-position: 100%;
+        object-position: 50%;
     }
 }
 
@@ -49,10 +49,10 @@
 
 @keyframes imgToRight {
     0% {
-        object-position: 100%;
+        object-position: 50%;
     }
     100% {
-        object-position: 200%;
+        object-position: 100%;
     }
 }
 
@@ -278,7 +278,7 @@
 .healthcare__slider--image > img {
     height: 100%;
     object-fit: cover;
-    object-position: 100%;
+    object-position: 50%;
 }
 
 .healthcare__slider--info {
