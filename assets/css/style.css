@@ -166,12 +166,12 @@
 .healthcare__facts--items {
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .healthcare__facts--item {
     flex: 1 0 50%;
     padding-bottom: 80px;
+    padding-right: 20px;
 }
 
 .healthcare__facts--item-title {
@@ -402,6 +402,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 0 32px;
 }
 
 .healthcare__links--item {
@@ -409,6 +410,7 @@
     min-height: 540px;
     max-width: 420px;
     display: flex;
+    flex: 1 0 25%;
     flex-direction: column;
     justify-content: space-between;
     padding: 80px 60px 60px 60px;

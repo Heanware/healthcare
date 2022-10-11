@@ -76,6 +76,10 @@
         padding-bottom: 50px;
     }
 
+    .healthcare__links--items {
+        gap: 0 26px;
+    }
+
     .healthcare__links--item {
         padding: 80px 45px 50px 45px;
         min-height: 500px;
@@ -200,6 +204,10 @@
         font-size: 12px;
     }
 
+    .healthcare__links--items {
+        gap: 0 20px;
+    }
+
     .healthcare__links--item {
         padding: 35px 24px 25px 24px;
         min-height: 325px;
@@ -317,6 +325,10 @@
     .healthcare__links {
         padding-top: 60px;
         padding-bottom: 90px;
+    }
+
+    .healthcare__links--items {
+        gap: 0 30px;
     }
 
     .healthcare__links--item {
@@ -457,6 +469,10 @@
     .healthcare__links {
         padding-top: 40px;
         padding-bottom: 50px;
+    }
+
+    .healthcare__links--items {
+        gap: 0 20px;
     }
 
     .healthcare__links--item {
