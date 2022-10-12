@@ -1,6 +1,7 @@
 const videoBeforeAnimation = 300,
-    numbersBeforeAnimation = 500,
-    $window = $(window);
+    $window = $(window),
+    verticalHeight = $window.innerHeight(),
+    numbersBeforeAnimation = verticalHeight / 1.3;
 
 let windowWidth = $window.outerWidth(),
     numbersAnimated = false;
@@ -79,12 +80,49 @@ class Slider {
     }
 }
 
+class AnimatedNumber {
+
+    $number;
+    isAnimated = false;
+
+    constructor($number) {
+        let offset = $number.offset().top,
+            animatedNumber = this;
+        this.$number = $number;
+        $window.on("scroll", function () {
+            if ($(this).scrollTop() > offset - numbersBeforeAnimation && !animatedNumber.isAnimated) {
+                animatedNumber.animate();
+            }
+        })
+    }
+
+
+    animate() {
+        this.isAnimated = true;
+        let $number = this.$number;
+        $number.easy_number_animate({
+            start_value: 0,
+            end_value: $number.data("number"),
+            duration: 800,
+            delimiter: '',
+            after: function () {
+                let text;
+                if ($number.data("after")) {
+                    text = $number.text() + $number.data("after");
+                } else if ($number.data("before")) {
+                    text = $number.data("before") + $number.text();
+                }
+                $number.text(text);
+            }
+        });
+    }
+}
+
 
 $(function () {
     let $videoWrappers = $(".js-wider"),
         scrollBarWidth = window.innerWidth - $window.width(),
         $numbers = $(".js-number"),
-        $factsAnimationBreakpoint = $(".healthcare__facts").offset().top - numbersBeforeAnimation,
         $sliders = $(".js-slider");
 
     $sliders.each(function () {
@@ -94,8 +132,11 @@ $(function () {
             $this.find(".healthcare__slider--info-descriptions"),
             $this.find(".healthcare__slider--info-controls")
         );
-    })
+    });
 
+    $numbers.each(function () {
+        new AnimatedNumber($(this));
+    });
 
     $window.on("scroll", function () {
         let scroll = $(this).scrollTop();
@@ -108,34 +149,8 @@ $(function () {
             if (scroll > offset - videoBeforeAnimation) {
                 $video.css("max-width", width + "px");
             } else {
-                $video.css("max-width", "calc(100vw - 120px)");
+                $video.css("max-width", "");
             }
         });
-
-        if (scroll >= $factsAnimationBreakpoint && !numbersAnimated) {
-            animateNumbers();
-        }
     });
-
-    function animateNumbers() {
-        numbersAnimated = true;
-        $numbers.each(function () {
-            let $this = $(this);
-            $this.easy_number_animate({
-                start_value: 0,
-                end_value: $this.data("number"),
-                duration: 800,
-                delimiter: '',
-                after: function () {
-                    let text;
-                    if ($this.data("after")) {
-                        text = $this.text() + $this.data("after");
-                    } else if ($this.data("before")) {
-                        text = $this.data("before") + $this.text();
-                    }
-                    $this.text(text);
-                }
-            });
-        });
-    }
 });

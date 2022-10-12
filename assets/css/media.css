@@ -1,0 +1,587 @@
+@media (max-width: 1600px) {
+    .container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    /* HEADER */
+    .healthcare__header {
+        grid-template-rows: 680px;
+    }
+
+    /* ABOUT */
+    .healthcare__about {
+        padding-top: 160px;
+        padding-bottom: 60px;
+    }
+
+    /* VIDEO */
+    .healthcare__video {
+        padding-bottom: 46px;
+    }
+
+    .healthcare__video--wrapper video {
+        max-width: calc(100vw - 80px);
+    }
+
+    /* FACTS */
+    .healthcare__facts {
+        padding-top: 75px;
+        padding-bottom: 15px;
+    }
+
+    .healthcare__facts--item {
+        padding-bottom: 60px;
+    }
+
+    .healthcare__facts--item-number {
+        padding-bottom: 20px;
+    }
+
+    /* CARDS */
+    .healthcare__cards {
+        grid-template-rows: repeat(2, 400px);
+    }
+
+    .healthcare__cards--top,
+    .healthcare__cards--bottom {
+        padding: 60px;
+    }
+
+    .healthcare__cards--description {
+        padding-left: 40px;
+    }
+
+    /* SLIDER */
+    .healthcare__slider--info {
+        padding: 120px 0 70px 60px;
+        min-height: 800px;
+    }
+
+    .healthcare__slider--info-title {
+        padding-bottom: 110px;
+    }
+
+    .healthcare__slider--info-description-text {
+        padding-bottom: 80px;
+    }
+
+    /* LINKS */
+    .healthcare__links {
+        padding-top: 115px;
+        padding-bottom: 85px;
+    }
+
+    .healthcare__links--title {
+        padding-bottom: 50px;
+    }
+
+    .healthcare__links--items {
+        gap: 0 26px;
+    }
+
+    .healthcare__links--item {
+        padding: 80px 45px 50px 45px;
+        min-height: 500px;
+        max-width: 356px;
+        margin-bottom: 32px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .container {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .healthcare__header--description-text,
+    .healthcare__about--right-text,
+    .healthcare__cards--top-description,
+    .healthcare__cards--bottom-description,
+    .healthcare__slider--info-description-text {
+        font-size: 14px;
+        text-indent: 25px;
+    }
+
+    .healthcare__header {
+        grid-template-rows: 668px;
+    }
+
+    .healthcare__header--description {
+        padding-left: 32px;
+    }
+
+    .healthcare__header--description-title {
+        font-size: 42px;
+    }
+
+    .healthcare__header--description-text {
+        max-width: 450px;
+    }
+
+    .healthcare__about {
+        padding-top: 140px;
+        padding-bottom: 50px;
+    }
+
+    .healthcare__video {
+        padding-bottom: 36px;
+    }
+
+    .healthcare__video--wrapper video {
+        max-width: calc(100vw - 64px);
+    }
+
+    .healthcare__facts {
+        padding-top: 140px;
+        padding-bottom: 80px;
+    }
+
+    .healthcare__facts--item-number {
+        font-size: 75px;
+    }
+
+    .healthcare__facts--item-description {
+        font-size: 18px;
+        max-width: 385px;
+    }
+
+    .healthcare__cards {
+        grid-template-rows: repeat(2, 384px);
+    }
+
+    .healthcare__cards--description {
+        grid-column: span 2;
+        grid-row: 1;
+        font-size: 35px;
+    }
+
+    .healthcare__cards--description-text {
+        max-width: 712px;
+    }
+
+    .healthcare__cards--top-title,
+    .healthcare__cards--bottom-title,
+    .healthcare__slider--info-description-title {
+        font-size: 20px;
+        padding-bottom: 30px;
+    }
+
+    .healthcare__slider--info-descriptions {
+        padding-bottom: 60px;
+    }
+
+    .healthcare__slider--info-title {
+        font-size: 12px;
+    }
+
+    .healthcare__slider--info {
+        min-height: 768px;
+        padding: 80px 32px 60px 32px;
+    }
+
+    .healthcare__slider--info-title {
+        padding-bottom: 175px;
+    }
+
+    .healthcare__slider--info-description-text {
+        padding-bottom: 60px;
+    }
+
+    .healthcare__slider--info-description-button > a {
+        padding: 17px 47px;
+        font-size: 12px;
+    }
+
+    .healthcare__links {
+        padding-top: 175px;
+        padding-bottom: 175px;
+    }
+
+    .healthcare__links--title {
+        padding-bottom: 45px;
+        font-size: 12px;
+    }
+
+    .healthcare__links--items {
+        gap: 0 20px;
+    }
+
+    .healthcare__links--item {
+        padding: 35px 24px 25px 24px;
+        min-height: 325px;
+        max-width: 218px;
+        margin-bottom: 30px;
+    }
+
+    .healthcare__links--item-info-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    .healthcare__links--item-info-text {
+        font-size: 14px;
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .healthcare__header {
+        grid-template-rows: 380px 570px;
+    }
+
+    .healthcare__header--description {
+        grid-row: 1;
+        grid-column: span 2;
+        justify-content: flex-end;
+        padding-bottom: 70px;
+    }
+
+    .healthcare__header--image {
+        grid-column: span 2;
+        background-position: bottom;
+    }
+
+    .healthcare__about {
+        padding-top: 100px;
+        padding-bottom: 40px;
+        font-size: 12px;
+    }
+
+    .healthcare__about--right-text {
+        font-size: 12px;
+    }
+
+    .healthcare__video {
+        padding-bottom: 26px;
+    }
+
+    .healthcare__video--wrapper video {
+        max-width: calc(100vw - 48px);
+    }
+
+    .healthcare__facts {
+        padding-top: 120px;
+        padding-bottom: 15px;
+    }
+
+    .healthcare__cards {
+        grid-template-rows: 405px 512px;
+    }
+
+    .healthcare__cards--description {
+        padding-left: 24px;
+    }
+
+    .healthcare__cards--description-text {
+        max-width: 530px;
+    }
+
+    .healthcare__cards--top,
+    .healthcare__cards--bottom {
+        padding: 80px 40px 65px 24px;
+    }
+
+    .healthcare__slider {
+        flex-direction: column;
+    }
+
+    .healthcare__slider--info {
+        padding: 40px 24px 60px 24px;
+        min-height: 460px;
+    }
+
+    .healthcare__slider--info-title {
+        padding-bottom: 60px;
+    }
+
+    .healthcare__slider--info-descriptions {
+        padding-bottom: 80px;
+    }
+
+    .healthcare__slider--info-description-text {
+        padding-bottom: 50px;
+    }
+
+    .healthcare__slider--images {
+        min-height: 512px;
+    }
+
+    .healthcare__slider--image {
+        background-position: bottom;
+    }
+
+    .healthcare__slider--info-controls-prev,
+    .healthcare__slider--info-controls-next {
+        min-height: 22px;
+    }
+
+    .healthcare__links {
+        padding-top: 60px;
+        padding-bottom: 90px;
+    }
+
+    .healthcare__links--items {
+        gap: 0 30px;
+    }
+
+    .healthcare__links--item {
+        padding: 80px 40px 40px 40px;
+        min-height: 450px;
+        max-width: 345px;
+        margin-bottom: 30px;
+    }
+
+    .healthcare__links--item-info-image {
+        width: 122px;
+        height: 122px;
+    }
+
+    .healthcare__links--item-info-text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 568px) {
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .healthcare__header--description-text,
+    .healthcare__about--right-text,
+    .healthcare__facts--item-description,
+    .healthcare__cards--top-description,
+    .healthcare__cards--bottom-description,
+    .healthcare__slider--info-description-text {
+        text-indent: unset;
+    }
+
+    .healthcare__header {
+        grid-template-rows: 250px 320px;
+    }
+
+    .healthcare__header--description {
+        padding: 0 0 50px 15px;
+    }
+
+    .healthcare__header--description-title {
+        font-size: 26px;
+        padding-bottom: 20px;
+    }
+
+    .healthcare__header--description-text {
+        font-size: 12px;
+    }
+
+    .healthcare__about {
+        padding-top: 80px;
+        padding-bottom: 30px;
+    }
+
+    .healthcare__about--right-text {
+        max-width: 255px;
+    }
+
+    .healthcare__video {
+        padding-bottom: 16px;
+    }
+
+    .healthcare__facts {
+        padding-top: 80px;
+        padding-bottom: 20px;
+    }
+
+    .healthcare__facts--item-description {
+        font-size: 14px;
+        max-width: 250px;
+    }
+
+    .healthcare__cards {
+        grid-template-rows: 150px 320px;
+    }
+
+    .healthcare__cards--description {
+        padding: 0 15px 60px 15px;
+    }
+
+    .healthcare__cards--description-text {
+        font-size: 22px;
+        max-width: 400px;
+    }
+
+    .healthcare__cards--top,
+    .healthcare__cards--bottom {
+        padding: 60px 17px 43px 17px;
+    }
+
+    .healthcare__cards--top-title,
+    .healthcare__cards--bottom-title {
+        padding-bottom: 20px;
+    }
+
+    .healthcare__cards--top-image,
+    .healthcare__cards--bottom-image {
+        min-height: 20px;
+        max-width: 20px;
+    }
+
+    .healthcare__slider--images {
+        min-height: 320px;
+    }
+
+    .healthcare__slider--image {
+        flex-direction: column;
+        justify-content: unset;
+    }
+
+    .healthcare__slider--info {
+        padding: 20px 15px 40px 15px;
+        min-height: 310px;
+    }
+
+    .healthcare__slider--info-title {
+        padding-bottom: 40px;
+    }
+
+    .healthcare__slider--info-descriptions {
+        max-width: 398px;
+        padding-bottom: 65px;
+    }
+
+    .healthcare__slider--info-description-title {
+        padding-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .healthcare__slider--info-description-text {
+        padding-bottom: 45px;
+        font-size: 12px;
+    }
+
+    .healthcare__links {
+        padding-top: 40px;
+        padding-bottom: 50px;
+    }
+
+    .healthcare__links--items {
+        gap: 0 20px;
+    }
+
+    .healthcare__links--item {
+        padding: 35px 23px 24px 23px;
+        min-height: 355px;
+        max-width: 255px;
+        margin-bottom: 30px;
+    }
+
+    .healthcare__links--item-info-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    .healthcare__links--item-info-text {
+        font-size: 14px;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    .healthcare__header {
+        grid-template-rows: 270px 230px;
+    }
+
+    .healthcare__about {
+        flex-direction: column;
+    }
+
+    .healthcare__about--right-text,
+    .healthcare__facts--item-description {
+        max-width: unset;
+    }
+
+    .healthcare__video--wrapper video {
+        max-width: calc(100vw - 30px);
+    }
+
+    .healthcare__facts--item {
+        flex: 1 0 100%;
+    }
+
+    .healthcare__cards {
+        grid-template-rows: 280px repeat(2, 284px);
+        grid-template-columns: 1fr;
+    }
+
+    .healthcare__cards--description {
+        font-size: 22px;
+    }
+
+    .healthcare__cards--top {
+        grid-row: 2;
+        grid-column: span 2;
+    }
+
+    .healthcare__cards--top,
+    .healthcare__cards--bottom {
+        padding: 40px 15px 33px 15px;
+    }
+
+    .healthcare__cards--top-title,
+    .healthcare__cards--bottom-title {
+        padding-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .healthcare__cards--top-description,
+    .healthcare__cards--bottom-description {
+        font-size: 12px;
+    }
+
+    .healthcare__cards--top-image,
+    .healthcare__cards--bottom-image,
+    .healthcare__links--item-arrow {
+        min-height: 15px;
+        max-width: 15px;
+    }
+
+    .healthcare__slider--images {
+        min-height: 230px;
+    }
+
+    .healthcare__slider--info-descriptions {
+        padding-bottom: 50px;
+    }
+
+    .healthcare__slider--info-description-text {
+        padding-bottom: 30px;
+    }
+
+    .healthcare__slider--info-description-button,
+    .healthcare__slider--info-description-button > a {
+        display: block;
+        text-align: center;
+    }
+
+    .healthcare__slider--info-controls {
+        max-width: unset;
+    }
+
+    .healthcare__links--title {
+        padding-bottom: 40px;
+    }
+
+    .healthcare__links--item {
+        padding: 35px 23px 24px 23px;
+        min-height: 355px;
+        max-width: 290px;
+        margin-bottom: 30px;
+    }
+}
