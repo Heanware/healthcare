@@ -39,13 +39,9 @@
     }
 
     /* CARDS */
-    .healthcare__cards {
-        grid-template-rows: repeat(2, 400px);
-    }
-
-    .healthcare__cards--top,
-    .healthcare__cards--bottom {
+    .healthcare__cards--item {
         padding: 60px;
+        min-height: 400px;
     }
 
     .healthcare__cards--description {
@@ -97,8 +93,8 @@
 
     .healthcare__header--description-text,
     .healthcare__about--right-text,
-    .healthcare__cards--top-description,
-    .healthcare__cards--bottom-description,
+    .healthcare__cards--item-description,
+    .healthcare__cards--item-description,
     .healthcare__slider--info-description-text {
         font-size: 14px;
         text-indent: 25px;
@@ -148,21 +144,32 @@
     }
 
     .healthcare__cards {
-        grid-template-rows: repeat(2, 384px);
+        flex-direction: column;
+    }
+
+    .healthcare__cards--items {
+        flex-direction: row;
+    }
+
+    .healthcare__cards--item {
+        flex: 0 0 50%;
+        min-height: 384px;
+        padding: 60px 32px 50px 32px;
     }
 
     .healthcare__cards--description {
-        grid-column: span 2;
-        grid-row: 1;
         font-size: 35px;
+        padding-left: 32px;
+        padding-top: 125px;
+        padding-bottom: 125px;
     }
 
     .healthcare__cards--description-text {
         max-width: 712px;
     }
 
-    .healthcare__cards--top-title,
-    .healthcare__cards--bottom-title,
+
+    .healthcare__cards--item-title,
     .healthcare__slider--info-description-title {
         font-size: 20px;
         padding-bottom: 30px;
@@ -271,10 +278,6 @@
         padding-bottom: 15px;
     }
 
-    .healthcare__cards {
-        grid-template-rows: 405px 512px;
-    }
-
     .healthcare__cards--description {
         padding-left: 24px;
     }
@@ -283,9 +286,9 @@
         max-width: 530px;
     }
 
-    .healthcare__cards--top,
-    .healthcare__cards--bottom {
+    .healthcare__cards--item {
         padding: 80px 40px 65px 24px;
+        min-height: 512px;
     }
 
     .healthcare__slider {
@@ -358,8 +361,8 @@
     .healthcare__header--description-text,
     .healthcare__about--right-text,
     .healthcare__facts--item-description,
-    .healthcare__cards--top-description,
-    .healthcare__cards--bottom-description,
+    .healthcare__cards--item-description,
+    .healthcare__cards--item-description,
     .healthcare__slider--info-description-text {
         text-indent: unset;
     }
@@ -404,10 +407,6 @@
         max-width: 250px;
     }
 
-    .healthcare__cards {
-        grid-template-rows: 150px 320px;
-    }
-
     .healthcare__cards--description {
         padding: 0 15px 60px 15px;
     }
@@ -417,18 +416,18 @@
         max-width: 400px;
     }
 
-    .healthcare__cards--top,
-    .healthcare__cards--bottom {
+    .healthcare__cards--item {
         padding: 60px 17px 43px 17px;
+        min-height: 320px;
     }
 
-    .healthcare__cards--top-title,
-    .healthcare__cards--bottom-title {
+    .healthcare__cards--item-title,
+    .healthcare__cards--item-title {
         padding-bottom: 20px;
     }
 
-    .healthcare__cards--top-image,
-    .healthcare__cards--bottom-image {
+    .healthcare__cards--item-image,
+    .healthcare__cards--item-image {
         min-height: 20px;
         max-width: 20px;
     }
@@ -515,38 +514,34 @@
         flex: 1 0 100%;
     }
 
-    .healthcare__cards {
-        grid-template-rows: 280px repeat(2, 284px);
-        grid-template-columns: 1fr;
-    }
-
     .healthcare__cards--description {
         font-size: 22px;
     }
 
-    .healthcare__cards--top {
+    .healthcare__cards--items {
         grid-row: 2;
         grid-column: span 2;
     }
 
-    .healthcare__cards--top,
-    .healthcare__cards--bottom {
+    .healthcare__cards--item {
         padding: 40px 15px 33px 15px;
+        min-height: 285px;
+        flex: 1 0 100%;
     }
 
-    .healthcare__cards--top-title,
-    .healthcare__cards--bottom-title {
+    .healthcare__cards--item-title,
+    .healthcare__cards--item-title {
         padding-bottom: 10px;
         font-size: 16px;
     }
 
-    .healthcare__cards--top-description,
-    .healthcare__cards--bottom-description {
+    .healthcare__cards--item-description,
+    .healthcare__cards--item-description {
         font-size: 12px;
     }
 
-    .healthcare__cards--top-image,
-    .healthcare__cards--bottom-image,
+    .healthcare__cards--item-image,
+    .healthcare__cards--item-image,
     .healthcare__links--item-arrow {
         min-height: 15px;
         max-width: 15px;
