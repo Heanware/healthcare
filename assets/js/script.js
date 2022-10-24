@@ -8,31 +8,27 @@ let windowWidth = $window.outerWidth(),
 
 class Slider {
 
-    $images;
-    $descriptions;
-    $activeImage;
+    $items;
+    $activeItem;
     $slideNumber;
     isChangingSlide = false;
 
-    constructor($images, $descriptions, $controls) {
-        this.$images = $images.find(".healthcare__slider--image");
-        this.$descriptions = $descriptions.find(".healthcare__slider--info-description");
-        this.$descriptions.first().addClass("description-active");
-        this.$activeImage = this.$images.first();
-        this.$activeImage.addClass("image-active");
-
+    constructor($items, $controls) {
+        this.$items = $items;
+        this.$activeItem = this.$items.first();
+        this.$activeItem.addClass("slide-active");
+        this.$activeItem.find(".healthcare__slider--item-image").addClass("image-from-left");
         let thisSlider = this,
             $arrowPrev = $controls.find(".healthcare__slider--info-controls-prev"),
             $arrowNext = $controls.find(".healthcare__slider--info-controls-next");
 
         this.$slideNumber = $controls.find(".js-slides-counter");
-        this.$slideNumber.text((this.$activeImage.index() + 1).toString().padStart(2, "0"));
-
+        this.updateSlideNumber(this.$activeItem.index());
         $arrowPrev.on("click", function () {
             if (!thisSlider.isChangingSlide) {
                 thisSlider.blockControls();
                 thisSlider.prev();
-                thisSlider.afterChange("image-active-right");
+                thisSlider.updateSlideNumber(thisSlider.$activeItem.index());
             }
         });
 
@@ -40,35 +36,34 @@ class Slider {
             if (!thisSlider.isChangingSlide) {
                 thisSlider.blockControls();
                 thisSlider.next();
-                thisSlider.afterChange("image-active");
+                thisSlider.updateSlideNumber(thisSlider.$activeItem.index());
             }
         });
     }
 
-    afterChange($class) {
-        this.$images.removeClass("image-active image-active-right");
-        this.$activeImage.addClass($class);
-        this.$descriptions.removeClass("description-active");
-        this.$descriptions.eq(this.$activeImage.index()).addClass("description-active");
-        this.$slideNumber.text((this.$activeImage.index() + 1).toString().padStart(2, "0"));
-    }
-
     next() {
-        let $next = this.$activeImage.next();
-        if ($next.length > 0) {
-            this.$activeImage = $next;
-        } else {
-            this.$activeImage = this.$images.first();
-        }
+        let $next = this.$activeItem.next();
+        this.clearClasses();
+        this.$activeItem = $next.length > 0 ? $next : this.$items.first();
+        this.$activeItem.addClass("slide-active");
+        this.$activeItem.find(".healthcare__slider--item-image").addClass("image-from-left");
     }
 
     prev() {
-        let $prev = this.$activeImage.prev();
-        if ($prev.length > 0) {
-            this.$activeImage = $prev;
-        } else {
-            this.$activeImage = this.$images.last();
-        }
+        let $prev = this.$activeItem.prev();
+        this.clearClasses();
+        this.$activeItem.find(".healthcare__slider--item-image").addClass("image-to-right");
+        this.$activeItem = $prev.length > 0 ? $prev : this.$items.last();
+        this.$activeItem.addClass("slide-active");
+    }
+
+    updateSlideNumber($index) {
+        this.$slideNumber.text(($index + 1).toString().padStart(2, "0"));
+    }
+
+    clearClasses() {
+        this.$items.removeClass("slide-active");
+        this.$items.find(".healthcare__slider--item-image").removeClass("image-to-right image-from-left image-active");
     }
 
     blockControls() {
@@ -82,38 +77,39 @@ class Slider {
 
 class AnimatedNumber {
 
+    $numberWrapper;
     $number;
+    sEndValue;
     isAnimated = false;
 
-    constructor($number) {
-        let offset = $number.offset().top,
-            animatedNumber = this;
-        this.$number = $number;
+    constructor($numberWrapper) {
+        const regExp = new RegExp('[0-9]+');
+        let offset = $numberWrapper.offset().top,
+            animatedNumber = this,
+            sNumber = $numberWrapper.data("number").toString(),
+            arSymbals = sNumber.replace(regExp, "").split("");
+        this.$numberWrapper = $numberWrapper;
+        this.$number = $numberWrapper.find(".number");
+        this.sEndValue = sNumber.match(regExp);
+        $numberWrapper.find(".number-prefix").text(arSymbals[0]);
+        $numberWrapper.find(".number-suffix").text(arSymbals[1]);
         $window.on("scroll", function () {
             if ($(this).scrollTop() > offset - numbersBeforeAnimation && !animatedNumber.isAnimated) {
                 animatedNumber.animate();
             }
-        })
+        });
     }
 
 
     animate() {
         this.isAnimated = true;
-        let $number = this.$number;
-        $number.easy_number_animate({
+        let $number = this.$number,
+            animatedNumber = this;
+        this.$number.easy_number_animate({
             start_value: 0,
-            end_value: $number.data("number"),
+            end_value: animatedNumber.sEndValue,
             duration: 800,
             delimiter: '',
-            after: function () {
-                let text;
-                if ($number.data("after")) {
-                    text = $number.text() + $number.data("after");
-                } else if ($number.data("before")) {
-                    text = $number.data("before") + $number.text();
-                }
-                $number.text(text);
-            }
         });
     }
 }
@@ -128,9 +124,8 @@ $(function () {
     $sliders.each(function () {
         $this = $(this);
         new Slider(
-            $this.find(".healthcare__slider--images"),
-            $this.find(".healthcare__slider--info-descriptions"),
-            $this.find(".healthcare__slider--info-controls")
+            $this.find(".healthcare__slider--items .healthcare__slider--item"),
+            $this.find(".healthcare__slider--controls")
         );
     });
 
